@@ -69,9 +69,9 @@ root@ubuntu:/# find -name test.txt
  
 7
  root@ubuntu:/# ifconfig
-eth0      Link encap:Ethernet  HWaddr 00:0c:29:cc:41:d1  
-          inet addr:192.168.89.129  Bcast:192.168.89.255  Mask:255.255.255.0
-          inet6 addr: fe80::20c:29ff:fecc:41d1/64 Scope:Link
+eth0      Link encap:Ethernet  HWaddr xxx.xxx.xx.xxx  
+          inet addr:xxx.xxx.xx.xxx  Bcast:xxx.xxx.xx.xxx  Mask:xxx.xxx.xx.xxx
+          inet6 addr: xxx.xxx.xx.xxx Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:713 errors:0 dropped:0 overruns:0 frame:0
           TX packets:119 errors:0 dropped:0 overruns:0 carrier:0
@@ -80,21 +80,21 @@ eth0      Link encap:Ethernet  HWaddr 00:0c:29:cc:41:d1
           Interrupt:19 Base address:0x2000 
 
 lo        Link encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet addr:xxx.xxx.xx.xxx  Mask:xxx.xxx.xx.xxx
           inet6 addr: ::1/128 Scope:Host
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
           RX packets:171 errors:0 dropped:0 overruns:0 frame:0
           TX packets:171 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1 
           RX bytes:14897 (14.8 KB)  TX bytes:14897 (14.8 KB)
-root@ubuntu:/# DEVICE=eth0 HWADDR=00:0c:29:cc:41:d1 ONBOOT=yes TYPE=Ethernet IPADDR=192.168.246.2
+root@ubuntu:/# DEVICE=eth0 HWADDR=xxx.xxx.xx.xxx ONBOOT=yes TYPE=Ethernet IPADDR=xxx.xxx.xx.xxx
 root@ubuntu:/# vi /etc/sysconfig/network-scripts/ifcfg-eth0
 root@ubuntu:/# ifconfig
 eth0      Link encap:Ethernet  HWaddr 00:0c:29:cc:41:d1  
-          inet addr:192.168.246.2  Bcast:192.168.246.255  Mask:255.255.255.0
-          inet6 addr: fe80::20c:29ff:fecc:41d1/64 Scope:Link
-          inet6 addr: 2001:da8:e800:13d0:2019:1c7e:49d5:ad5d/64 Scope:Global
-          inet6 addr: 2001:da8:e800:13d0:20c:29ff:fecc:41d1/64 Scope:Global
+          inet addr:xxx.xxx.xx.xxx  Bcast:xxx.xxx.xx.xxx  Mask:xxx.xxx.xx.xxx
+          inet6 addr: fxxx.xxx.xx.xxx Scope:Link
+          inet6 addr: 2xxx.xxx.xx.xxx Scope:Global
+          inet6 addr: 2xxx.xxx.xx.xxx Scope:Global
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:3454 errors:0 dropped:0 overruns:0 frame:0
           TX packets:383 errors:0 dropped:0 overruns:0 carrier:0
@@ -103,7 +103,7 @@ eth0      Link encap:Ethernet  HWaddr 00:0c:29:cc:41:d1
           Interrupt:19 Base address:0x2000 
 
 lo        Link encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet addr:xxx.xxx.xx.xxx  Mask:xxx.xxx.xx.xxx
           inet6 addr: ::1/128 Scope:Host
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
           RX packets:319 errors:0 dropped:0 overruns:0 frame:0

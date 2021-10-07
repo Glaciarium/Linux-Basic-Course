@@ -1,0 +1,138 @@
+student@ubuntu:~$ sudo passwd root
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+student@ubuntu:~$ su root
+Password: 
+root@ubuntu:/home/student# ls -l
+total 44
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Desktop
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Documents
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Downloads
+-rw-r--r-- 1 student student 8980 Mar 22 00:07 examples.desktop
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Music
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Pictures
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Public
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Templates
+drwxr-xr-x 2 student student 4096 Mar 22 00:18 Videos
+root@ubuntu:/home/student# ls -al
+total 112
+drwxr-xr-x 16 student student 4096 Jun  9 04:13 .
+drwxr-xr-x  3 root    root    4096 Mar 22 00:07 ..
+-rw-------  1 student student   55 Jun  9 04:13 .bash_history
+-rw-r--r--  1 student student  220 Mar 22 00:07 .bash_logout
+-rw-r--r--  1 student student 3637 Mar 22 00:07 .bashrc
+drwx------ 18 student student 4096 Mar 22 00:39 .cache
+drwx------  3 student student 4096 Mar 22 00:27 .compiz
+drwx------ 16 student student 4096 Mar 22 00:36 .config
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Desktop
+-rw-r--r--  1 student student   25 Mar 22 00:18 .dmrc
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Documents
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Downloads
+-rw-r--r--  1 student student 8980 Mar 22 00:07 examples.desktop
+drwx------  3 student student 4096 Jun  9 03:58 .gconf
+-rw-------  1 student student 1908 Jun  9 03:54 .ICEauthority
+drwx------  3 student student 4096 Mar 22 00:18 .local
+drwx------  5 student student 4096 Mar 22 00:30 .mozilla
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Music
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Pictures
+-rw-r--r--  1 student student  675 Mar 22 00:07 .profile
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Public
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Templates
+drwxr-xr-x  2 student student 4096 Mar 22 00:18 Videos
+-rw-------  1 student student  102 Jun  9 03:54 .Xauthority
+-rw-------  1 student student  711 Jun  9 03:54 .xsession-errors
+-rw-------  1 student student 1545 Mar 22 00:41 .xsession-errors.old
+root@ubuntu:/home/student# touch test.txt
+root@ubuntu:/home/student# vi test.txt
+root@ubuntu:/home/student# ls test.txt
+test.txt
+root@ubuntu:/home/student# vi test.txt
+root@ubuntu:/home/student# cat test.txt
+Xu Yueling
+25120202203966
+root@ubuntu:/home/student# cd /usr
+root@ubuntu:/usr# mkdir mytest
+root@ubuntu:/usr# cp /home/student/test.txt /usr
+root@ubuntu:/usr# chmod 777 test.txt
+root@ubuntu:/usr# ls test.txt
+test.txt
+root@ubuntu:/usr# ls -l test.txt
+-rwxrwxrwx 1 root root 26 Jun  9 04:21 test.txt
+root@ubuntu:/usr# find test.txt
+test.txt
+root@ubuntu:/usr# cd ..
+root@ubuntu:/# find test.txt
+find: `test.txt': No such file or directory
+root@ubuntu:/# find -name test.txt
+./usr/test.txt
+ 
+7
+ root@ubuntu:/# ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:0c:29:cc:41:d1  
+          inet addr:192.168.89.129  Bcast:192.168.89.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fecc:41d1/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:713 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:119 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:66556 (66.5 KB)  TX bytes:14635 (14.6 KB)
+          Interrupt:19 Base address:0x2000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:171 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:171 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:14897 (14.8 KB)  TX bytes:14897 (14.8 KB)
+root@ubuntu:/# DEVICE=eth0 HWADDR=00:0c:29:cc:41:d1 ONBOOT=yes TYPE=Ethernet IPADDR=192.168.246.2
+root@ubuntu:/# vi /etc/sysconfig/network-scripts/ifcfg-eth0
+root@ubuntu:/# ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:0c:29:cc:41:d1  
+          inet addr:192.168.246.2  Bcast:192.168.246.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fecc:41d1/64 Scope:Link
+          inet6 addr: 2001:da8:e800:13d0:2019:1c7e:49d5:ad5d/64 Scope:Global
+          inet6 addr: 2001:da8:e800:13d0:20c:29ff:fecc:41d1/64 Scope:Global
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3454 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:383 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:394753 (394.7 KB)  TX bytes:70983 (70.9 KB)
+          Interrupt:19 Base address:0x2000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:319 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:319 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:27369 (27.3 KB)  TX bytes:27369 (27.3 KB)
+
+ 
+8
+root@ubuntu:/home# groupadd china
+root@ubuntu:/home# groupadd America
+root@ubuntu:/home# useradd xiaoxue -m
+root@ubuntu:/home# useradd chuzhong -m
+root@ubuntu:/home# useradd gaozhong -m
+root@ubuntu:/home# useradd daxue -m
+root@ubuntu:/home# passwd xiaoxue
+root@ubuntu:/home# passwd chuzhong
+root@ubuntu:/home# passwd gaozhong
+root@ubuntu:/home# passwd daxue
+root@ubuntu:/home# usermod -g china xiaoxue
+root@ubuntu:/home# usermod -g china chuzhong
+root@ubuntu:/home# usermod -g america gaozhong
+root@ubuntu:/home# usermod -g america daxue
+root@ubuntu:/home# touch paper.txt
+root@ubuntu:/home# chmod a+wr paper.txt
+root@ubuntu:/home# su xiaoxue
+xiaoxue@ubuntu:~$ vi paper.txt
+chuzhong@ubuntu:~$ vi paper.txt
+chuzhong@ubuntu:~$ su root 
+root@ubuntu:/home# usermod -g china daxue
+root@ubuntu:/home# su daxue
+daxue@ubuntu:~$ vi paper.txt
